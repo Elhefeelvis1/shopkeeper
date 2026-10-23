@@ -49,34 +49,27 @@ Shopkeeper-intro/
 │   └── Point of sale.png      # Real screenshot: ShopKeeper POS Checkout Interface
 ├── app.js                     # Theme switch, scroll progress, form validation & mailto redirection
 ├── index.html                 # Semantic single-page landing page markup
-├── package.json               # Project manifest and scripts
 ├── README.md                  # Project documentation
-├── server.js                  # Standalone Node.js HTTP server (zero npm dependencies)
 └── style.css                  # Responsive design system & light/dark CSS variables
 ```
 
 ---
 
-## 🚀 Quick Start
+## 🚀 Quick Start & Deployment
 
-### 1. Prerequisites
-Ensure you have [Node.js](https://nodejs.org/) installed (v16 or newer recommended).
+### 1. View Locally
+Because this project is 100% static client-side HTML, CSS, and JavaScript:
+- **Direct Preview**: Double-click [index.html](file:///c:/Users/USER/Desktop/Projects/Shopkeeper-intro/index.html) to open it directly in your web browser.
+- **Local HTTP Server** *(optional)*: Run any static web server in the directory, such as:
+  ```bash
+  npx serve .
+  # or with Python:
+  python -m http.server 8080
+  ```
 
-### 2. Start the Local Server
-Run the built-in static server:
-
-```bash
-# Using npm
-npm start
-
-# Or directly with Node.js
-node server.js
-```
-
-### 3. Open in Browser
-Visit **[http://localhost:8080](http://localhost:8080)** in your browser.
-
-*(You can also double-click `index.html` to preview directly in any modern web browser).*
+### 2. Zero-Config Cloud Deployment
+- **Vercel**: Connect your GitHub repository. Vercel automatically deploys it as a static edge website with zero build commands and zero serverless functions.
+- **GitHub Pages**: Go to **Settings** → **Pages** → Branch: `main` / `root` → Save. Instant live URL!
 
 ---
 
