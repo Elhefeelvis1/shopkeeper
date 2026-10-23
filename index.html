@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopKeeper — Modern Retail Inventory & Point of Sale Platform</title>
+  <meta name="description"
+    content="ShopKeeper is the reliable offline-first management platform for supermarkets, pharmacies, and retailers. Track stock, eliminate expiry losses, and manage sales effortlessly.">
+
+  <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Top Scroll Reading Progress Bar -->
+  <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+
+  <!-- Ambient Backdrop Lights -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+
+  <!-- Header Navigation -->
+  <header class="main-header">
+    <div class="header-container">
+      <a href="#hero" class="brand-logo">
+        <span class="brand-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <path d="M16 10a4 4 0 0 1-8 0" />
+          </svg>
+        </span>
+        <span class="brand-name">ShopKeeper</span>
+        <span class="brand-pill">Retail & POS</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#challenges" class="nav-item">Challenges</a>
+        <a href="#solutions" class="nav-item">Solutions</a>
+        <a href="#features" class="nav-item">Features</a>
+        <a href="#impact" class="nav-item">Impact</a>
+        <a href="#onboarding" class="nav-item">Onboarding</a>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Light / Dark Mode Toggle Switch -->
+        <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Light and Dark Theme"
+          title="Toggle Light/Dark Theme">
+          <span class="toggle-track">
+            <span class="toggle-thumb">
+              <svg class="sun-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <circle cx="12" cy="12" r="5" />
+                <line x1="12" y1="1" x2="12" y2="3" />
+                <line x1="12" y1="21" x2="12" y2="23" />
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                <line x1="1" y1="12" x2="3" y2="12" />
+                <line x1="21" y1="12" x2="23" y2="12" />
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+              </svg>
+              <svg class="moon-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+              </svg>
+            </span>
+          </span>
+          <span class="theme-label" id="themeLabelText">Light</span>
+        </button>
+
+        <a href="#onboarding" class="header-cta-btn">
+          <span>Get Started</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Flow -->
+  <main class="page-main">
+
+    <!-- ========================================== -->
+    <!-- 1. HERO SECTION                            -->
+    <!-- ========================================== -->
+    <section class="hero-section" id="hero">
+      <div class="section-container">
+        <div class="hero-grid">
+
+          <div class="hero-content">
+            <div class="hero-badge">
+              <span class="badge-dot"></span>
+              <span>Intelligent Retail & Inventory Engine</span>
+            </div>
+
+            <h1 class="hero-heading">
+              Manage Your Store Sales &amp; Stock With <span class="highlight-pink">Total Confidence.</span>
+            </h1>
+
+            <p class="hero-lead">
+              The resilient offline-first point-of-sale and inventory system designed for pharmacies, supermarkets, and
+              growing merchants. Ring up sales instantly, monitor lot-level expiry dates, and track customer credit
+              debts without missing a beat.
+            </p>
+
+            <div class="hero-buttons">
+              <a href="#onboarding" class="primary-btn">
+                <span>Request Onboarding</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+              <a href="#solutions" class="secondary-btn">
+                <span>Explore Capabilities</span>
+              </a>
+            </div>
+
+            <div class="hero-highlights">
+              <div class="highlight-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff2a73" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>Zero Internet Downtime</span>
+              </div>
+              <div class="highlight-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff2a73" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>Batch &amp; Expiry Control</span>
+              </div>
+              <div class="highlight-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff2a73" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>Debt &amp; Customer Ledger</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- HERO SHOWCASE: Main Platform & Dashboard Screenshot -->
+          <div class="hero-visual-area">
+            <div class="app-mockup-window" id="heroMockup">
+              <div class="window-top-bar">
+                <div class="window-controls">
+                  <span class="control-dot dot-red"></span>
+                  <span class="control-dot dot-yellow"></span>
+                  <span class="control-dot dot-green"></span>
+                </div>
+                <div class="window-address-bar">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                  </svg>
+                  <span>shopkeeper.local/analytics</span>
+                </div>
+                <div class="window-status-pill">
+                  <span class="status-live-dot"></span> Live
+                </div>
+              </div>
+
+              <div class="window-image-wrapper">
+                <img src="assets/analytics.png" alt="ShopKeeper Dashboard & Analytics Overview"
+                  class="showcase-real-img">
+              </div>
+              <div class="hero-float-card float-bottom">
+                <div class="float-stat">+68%</div>
+                <div class="float-stat-sub">Workflow Efficiency</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 2. THE OPERATIONAL CHALLENGE               -->
+    <!-- ========================================== -->
+    <section class="section challenges-section" id="challenges">
+      <div class="section-container">
+        <div class="section-header text-center">
+          <span class="section-eyebrow">The Real Problem</span>
+          <h2 class="section-title">
+            The Operational <span class="highlight-pink">Challenges</span> Retailers Face Daily
+          </h2>
+          <p class="section-desc">
+            Manual notebooks, isolated cash registers, and brittle cloud apps that freeze when the network drops cost
+            retail businesses thousands in lost sales every month.
+          </p>
+        </div>
+
+        <div class="challenge-cards-grid">
+          <!-- Card 1: Inefficiency -->
+          <div class="challenge-card">
+            <div class="card-pill">
+              <span class="pill-badge">01</span>
+              <span class="pill-text">Inefficiency</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Manual Register Bottlenecks</h3>
+              <p class="card-text">
+                Calculating totals by hand and checking paper stock cards during peak hours causes long customer queues,
+                pricing mistakes, and checkout frustration.
+              </p>
+            </div>
+            <div class="card-metric-footer">
+              <span class="metric-highlight">-40%</span>
+              <span class="metric-label">Lost Checkout Velocity</span>
+            </div>
+          </div>
+
+          <!-- Card 2: Stock Discrepancies -->
+          <div class="challenge-card">
+            <div class="card-pill">
+              <span class="pill-badge">02</span>
+              <span class="pill-text">Visibility</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Blind Spots &amp; Expiry Losses</h3>
+              <p class="card-text">
+                Without lot-by-lot tracking, items expire quietly on back shelves. Retailers discover shortages only
+                after a customer asks, losing loyal shoppers.
+              </p>
+            </div>
+            <div class="card-metric-footer">
+              <span class="metric-highlight">25%+</span>
+              <span class="metric-label">Unplanned Inventory Shrinkage</span>
+            </div>
+          </div>
+
+          <!-- Card 3: Debt Recovery -->
+          <div class="challenge-card">
+            <div class="card-pill">
+              <span class="pill-badge">03</span>
+              <span class="pill-text">Debt Tracking</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Unrecovered Credit Debts</h3>
+              <p class="card-text">
+                Regular customer credit sales scribbled into notebooks get misplaced or disputed, eroding operating
+                capital and damaging supplier relationships.
+              </p>
+            </div>
+            <div class="card-metric-footer">
+              <span class="metric-highlight">18%</span>
+              <span class="metric-label">Capital Trapped in Uncollected Debts</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Metric Growth Banner -->
+        <div class="metrics-banner">
+          <div class="banner-stat-col">
+            <div class="banner-number highlight-pink">+68%</div>
+            <div class="banner-label">Checkout Speed &amp; Flow</div>
+          </div>
+          <div class="banner-divider"></div>
+          <div class="banner-stat-col">
+            <div class="banner-number highlight-pink">+74%</div>
+            <div class="banner-label">Operational Visibility</div>
+          </div>
+          <div class="banner-divider"></div>
+          <div class="banner-stat-col">
+            <div class="banner-number highlight-pink">99.9%</div>
+            <div class="banner-label">Local Store Availability</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 3. THE SHOPKEEPER SOLUTION & PLACEHOLDER 2 -->
+    <!-- ========================================== -->
+    <section class="section solutions-section" id="solutions">
+      <div class="section-container">
+        <div class="solutions-grid">
+
+          <div class="solutions-text-col">
+            <span class="section-eyebrow">Engineered For Retail</span>
+            <h2 class="section-title">
+              Operational Efficiency <span class="highlight-pink">Solved.</span>
+            </h2>
+            <p class="section-desc">
+              ShopKeeper consolidates inventory management, multi-cashier sales, purchasing, batch expiries, and
+              financial auditing into one seamless, intuitive hub.
+            </p>
+
+            <div class="feature-checklist">
+              <div class="checklist-item">
+                <div class="check-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="check-title">Lightning-Fast POS Barcode Checkout</h4>
+                  <p class="check-desc">Scan barcodes or search items by name instantly with zero keying latency.</p>
+                </div>
+              </div>
+
+              <div class="checklist-item">
+                <div class="check-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="check-title">Lot-by-Lot Expiry &amp; FIFO Tracking</h4>
+                  <p class="check-desc">Automatically deplete older batches first, preventing costly expired stock.</p>
+                </div>
+              </div>
+
+              <div class="checklist-item">
+                <div class="check-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="check-title">Integrated Credit &amp; Customer Debts</h4>
+                  <p class="check-desc">Record credit sales with one click and track repayments with automated ledger
+                    balances.</p>
+                </div>
+              </div>
+
+              <div class="checklist-item">
+                <div class="check-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="check-title">Audit Trail &amp; Role Permissions</h4>
+                  <p class="check-desc">Give cashiers restricted rights while store owners retain full financial audit
+                    control.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SOLUTIONS SHOWCASE: Point of Sale Interface Screenshot -->
+          <div class="solutions-visual-col">
+            <div class="app-mockup-window" id="posMockup">
+              <div class="window-top-bar">
+                <div class="window-controls">
+                  <span class="control-dot dot-red"></span>
+                  <span class="control-dot dot-yellow"></span>
+                  <span class="control-dot dot-green"></span>
+                </div>
+                <div class="window-address-bar">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                  </svg>
+                  <span>shopkeeper.local/point-of-sale</span>
+                </div>
+                <div class="window-status-pill">
+                  <span class="status-live-dot"></span> POS Active
+                </div>
+              </div>
+
+              <div class="window-image-wrapper">
+                <img src="assets/Point of sale.png" alt="ShopKeeper Point of Sale Interface" class="showcase-real-img">
+              </div>
+            </div>
+
+            <!-- Workflow optimization chips underneath -->
+            <div class="workflow-chips-card">
+              <div class="chips-title">Built-In Retail Automation:</div>
+              <div class="chips-row">
+                <span class="chip-item"><span class="chip-dot"></span> Instant Barcode Search</span>
+                <span class="chip-item"><span class="chip-dot"></span> Auto-Deplete FIFO</span>
+                <span class="chip-item"><span class="chip-dot"></span> Split Payment Routes</span>
+                <span class="chip-item"><span class="chip-dot"></span> Offline Local Storage</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 4. ONBOARDING & CONTACT FORM SECTION       -->
+    <!-- ========================================== -->
+    <section class="section onboarding-section" id="onboarding">
+      <div class="section-container">
+        <div class="onboarding-card-wrapper">
+
+          <div class="onboarding-intro">
+            <span class="section-eyebrow">Start Today</span>
+            <h2 class="onboarding-heading">
+              Ready to Upgrade Your Store Operations?
+            </h2>
+            <p class="onboarding-subtext">
+              Fill out this quick form. Our onboarding team will get in touch with you immediately to setup your store
+              with ShopKeeper.
+            </p>
+
+            <div class="onboarding-perks">
+              <div class="perk-row">
+                <div class="perk-icon">✓</div>
+                <span>Free on-site or remote demo setup</span>
+              </div>
+              <div class="perk-row">
+                <div class="perk-icon">✓</div>
+                <span>Easy CSV product &amp; stock import assistance</span>
+              </div>
+              <div class="perk-row">
+                <div class="perk-icon">✓</div>
+                <span>Dedicated staff training &amp; ongoing local support</span>
+              </div>
+            </div>
+
+            <div class="direct-email-box">
+              <span class="box-label">Direct Onboarding Inquiries:</span>
+              <a href="mailto:shopkeeperonboarding@gmail.com" class="box-email">
+                shopkeeperonboarding@gmail.com
+              </a>
+            </div>
+          </div>
+
+          <!-- The Onboarding Form -->
+          <div class="onboarding-form-card">
+            <div class="form-card-header">
+              <h3 class="form-title">Store Onboarding Form</h3>
+              <p class="form-subtitle">All submissions are delivered straight to our team.</p>
+            </div>
+
+            <form class="onboarding-form" id="onboardingForm">
+
+              <!-- Store Name & Full Name -->
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label for="businessName">Store / Business Name <span class="required">*</span></label>
+                  <input type="text" id="businessName" placeholder="e.g. Apex Health Pharmacy" required>
+                </div>
+                <div class="form-group">
+                  <label for="contactName">Contact Person Name <span class="required">*</span></label>
+                  <input type="text" id="contactName" placeholder="e.g. Dr. Samuel Okafor" required>
+                </div>
+              </div>
+
+              <!-- Phone Number (Required) -->
+              <div class="form-group">
+                <label for="phoneNumber">Phone Number / WhatsApp <span class="required">*</span></label>
+                <input type="tel" id="phoneNumber" placeholder="e.g. 0803 123 4567 or +234 803 123 4567" required>
+              </div>
+
+              <!-- Email (Optional) -->
+              <div class="form-group">
+                <label for="emailAddress">Email Address <span class="optional">(Optional)</span></label>
+                <input type="email" id="emailAddress" placeholder="e.g. store@gmail.com">
+              </div>
+
+              <!-- Store Category -->
+              <div class="form-group">
+                <label for="storeCategory">Store Category <span class="required">*</span></label>
+                <select id="storeCategory" required>
+                  <option value="Pharmacy / Healthcare Dispensary">Pharmacy / Healthcare Dispensary</option>
+                  <option value="Supermarket / Grocery Retail">Supermarket / Grocery Retail</option>
+                  <option value="Wholesale Distributor / Depot">Wholesale Distributor / Depot</option>
+                  <option value="Electronics / General Merchandise">Electronics / General Merchandise</option>
+                  <option value="Other Retail Business">Other Retail Business</option>
+                </select>
+              </div>
+
+              <!-- Store Address (Optional) -->
+              <div class="form-group">
+                <label for="storeAddress">Store Address / City <span class="optional">(Optional)</span></label>
+                <input type="text" id="storeAddress" placeholder="e.g. 45 Commercial Way, Ikeja, Lagos">
+              </div>
+
+              <!-- Additional Notes (Optional) -->
+              <div class="form-group">
+                <label for="additionalNotes">Notes or Specific Requirements <span
+                    class="optional">(Optional)</span></label>
+                <textarea id="additionalNotes" rows="3"
+                  placeholder="Tell us about your current register, number of staff, or specific needs..."></textarea>
+              </div>
+
+              <!-- Submit Button -->
+              <button type="submit" class="submit-form-btn" id="submitBtn">
+                <span>Submit &amp; Open Mail Confirmation</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="22" y1="2" x2="11" y2="13" />
+                  <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                </svg>
+              </button>
+
+              <p class="form-footer-disclaimer">
+                Clicking submit formats your onboarding details and opens your email client directly addressed to
+                <strong>shopkeeperonboarding@gmail.com</strong>.
+              </p>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="page-footer">
+    <div class="section-container footer-container">
+      <div class="footer-left">
+        <div class="brand-logo footer-brand">
+          <span class="brand-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <path d="M16 10a4 4 0 0 1-8 0" />
+            </svg>
+          </span>
+          <span class="brand-name">ShopKeeper</span>
+        </div>
+        <p class="footer-tagline">
+          Built for resilience, speed, and precision inventory control in modern retail.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#hero">Home</a>
+        <a href="#challenges">Challenges</a>
+        <a href="#solutions">Solutions</a>
+        <a href="#onboarding">Onboarding</a>
+        <a href="mailto:shopkeeperonboarding@gmail.com">Contact Us</a>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 ShopKeeper. All rights reserved. Direct inquiries to <a
+            href="mailto:shopkeeperonboarding@gmail.com">shopkeeperonboarding@gmail.com</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>

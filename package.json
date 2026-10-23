@@ -1,0 +1,20 @@
+{
+  "name": "shopkeeper-intro",
+  "version": "1.0.0",
+  "description": "Introductory presentation and landing page for ShopKeeper SaaS platform",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "shopkeeper",
+    "landing-page",
+    "presentation",
+    "saas",
+    "pos",
+    "retail"
+  ],
+  "author": "Mmaduabuchi Igwilo",
+  "license": "ISC"
+}
