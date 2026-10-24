@@ -15,7 +15,7 @@
     href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap"
     rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=2">
 </head>
 
 <body>
@@ -83,9 +83,116 @@
             <path d="M5 12h14M12 5l7 7-7 7" />
           </svg>
         </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle mobile navigation menu" aria-expanded="false" aria-controls="mobileNavDrawer">
+          <span class="hamburger-box">
+            <span class="hamburger-line line-1"></span>
+            <span class="hamburger-line line-2"></span>
+            <span class="hamburger-line line-3"></span>
+          </span>
+        </button>
       </div>
     </div>
   </header>
+
+  <!-- Mobile Navigation Drawer Overlay & Panel (Top-level under body) -->
+  <div class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
+    <div class="mobile-drawer-backdrop" id="mobileDrawerBackdrop"></div>
+    <div class="mobile-drawer-content">
+      <div class="mobile-drawer-header">
+        <div class="brand-logo drawer-brand">
+          <span class="brand-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <path d="M16 10a4 4 0 0 1-8 0" />
+            </svg>
+          </span>
+          <span class="brand-name">ShopKeeper</span>
+        </div>
+        <button class="mobile-drawer-close-btn" id="mobileDrawerCloseBtn" aria-label="Close navigation menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <nav class="mobile-nav-links">
+        <a href="#hero" class="mobile-nav-item">
+          <span class="mobile-nav-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+          </span>
+          <span class="mobile-nav-text">Home Overview</span>
+        </a>
+        <a href="#challenges" class="mobile-nav-item">
+          <span class="mobile-nav-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+          </span>
+          <span class="mobile-nav-text">Operational Challenges</span>
+        </a>
+        <a href="#solutions" class="mobile-nav-item">
+          <span class="mobile-nav-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+          </span>
+          <span class="mobile-nav-text">Solutions &amp; POS</span>
+        </a>
+        <a href="#features" class="mobile-nav-item">
+          <span class="mobile-nav-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+          </span>
+          <span class="mobile-nav-text">Core Capabilities</span>
+        </a>
+        <a href="#impact" class="mobile-nav-item">
+          <span class="mobile-nav-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="18" y1="20" x2="18" y2="10"></line>
+              <line x1="12" y1="20" x2="12" y2="4"></line>
+              <line x1="6" y1="20" x2="6" y2="14"></line>
+            </svg>
+          </span>
+          <span class="mobile-nav-text">Performance Impact</span>
+        </a>
+        <a href="#onboarding" class="mobile-nav-item">
+          <span class="mobile-nav-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="8.5" cy="7" r="4"></circle>
+              <line x1="20" y1="8" x2="20" y2="14"></line>
+              <line x1="23" y1="11" x2="17" y2="11"></line>
+            </svg>
+          </span>
+          <span class="mobile-nav-text">Store Onboarding</span>
+        </a>
+      </nav>
+
+      <div class="mobile-drawer-footer">
+        <a href="#onboarding" class="mobile-drawer-cta-btn">
+          <span>Request Store Setup</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+        <div class="mobile-drawer-contact">
+          <span class="drawer-contact-label">Direct Onboarding:</span>
+          <a href="mailto:shopkeeperonboarding@gmail.com" class="drawer-contact-email">shopkeeperonboarding@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Main Content Flow -->
   <main class="page-main">
@@ -259,7 +366,7 @@
         </div>
 
         <!-- Metric Growth Banner -->
-        <div class="metrics-banner">
+        <div class="metrics-banner" id="impact">
           <div class="banner-stat-col">
             <div class="banner-number highlight-pink">+68%</div>
             <div class="banner-label">Checkout Speed &amp; Flow</div>
@@ -295,7 +402,7 @@
               financial auditing into one seamless, intuitive hub.
             </p>
 
-            <div class="feature-checklist">
+            <div class="feature-checklist" id="features">
               <div class="checklist-item">
                 <div class="check-icon">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
@@ -409,15 +516,27 @@
 
             <div class="onboarding-perks">
               <div class="perk-row">
-                <div class="perk-icon">✓</div>
+                <div class="perk-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </div>
                 <span>Free on-site or remote demo setup</span>
               </div>
               <div class="perk-row">
-                <div class="perk-icon">✓</div>
+                <div class="perk-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </div>
                 <span>Easy CSV product &amp; stock import assistance</span>
               </div>
               <div class="perk-row">
-                <div class="perk-icon">✓</div>
+                <div class="perk-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </div>
                 <span>Dedicated staff training &amp; ongoing local support</span>
               </div>
             </div>
@@ -548,7 +667,7 @@
   <!-- Toast Container -->
   <div class="toast-container" id="toastContainer"></div>
 
-  <script src="app.js"></script>
+  <script src="app.js?v=2"></script>
 </body>
 
 </html>

@@ -36,11 +36,65 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // ============================================================================
-  // 2. SCROLL READING PROGRESS BAR & ACTIVE NAV
+  // 2. MOBILE NAVIGATION DRAWER CONTROLLER
+  // ============================================================================
+  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  const mobileNavDrawer = document.getElementById('mobileNavDrawer');
+  const mobileDrawerCloseBtn = document.getElementById('mobileDrawerCloseBtn');
+  const mobileDrawerBackdrop = document.getElementById('mobileDrawerBackdrop');
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-item, .mobile-drawer-cta-btn');
+
+  function openMobileMenu() {
+    if (!mobileNavDrawer) return;
+    mobileNavDrawer.classList.add('is-open');
+    mobileMenuBtn?.classList.add('is-active');
+    mobileMenuBtn?.setAttribute('aria-expanded', 'true');
+    mobileNavDrawer.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('mobile-menu-active');
+  }
+
+  function closeMobileMenu() {
+    if (!mobileNavDrawer) return;
+    mobileNavDrawer.classList.remove('is-open');
+    mobileMenuBtn?.classList.remove('is-active');
+    mobileMenuBtn?.setAttribute('aria-expanded', 'false');
+    mobileNavDrawer.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('mobile-menu-active');
+  }
+
+  mobileMenuBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = mobileNavDrawer?.classList.contains('is-open');
+    if (isOpen) {
+      closeMobileMenu();
+    } else {
+      openMobileMenu();
+    }
+  });
+
+  mobileDrawerCloseBtn?.addEventListener('click', closeMobileMenu);
+  mobileDrawerBackdrop?.addEventListener('click', closeMobileMenu);
+
+  mobileNavLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      closeMobileMenu();
+    });
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileNavDrawer?.classList.contains('is-open')) {
+      closeMobileMenu();
+    }
+  });
+
+
+  // ============================================================================
+  // 3. SCROLL READING PROGRESS BAR & ACTIVE NAV
   // ============================================================================
   const scrollProgressBar = document.getElementById('scrollProgressBar');
   const navItems = document.querySelectorAll('.nav-item');
-  const sections = document.querySelectorAll('section[id]');
+  const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
+  const sections = document.querySelectorAll('section[id], .metrics-banner[id], .feature-checklist[id]');
 
   function updateScrollProgress() {
     const scrollTop = window.scrollY || document.documentElement.scrollTop;
@@ -53,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Nav Scroll Spy
     let currentSectionId = '';
-    const scrollPosition = scrollTop + 120;
+    const scrollPosition = scrollTop + 140;
 
     sections.forEach((section) => {
       const top = section.offsetTop;
@@ -64,6 +118,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     navItems.forEach((link) => {
+      const href = link.getAttribute('href');
+      if (href === `#${currentSectionId}`) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+
+    mobileNavItems.forEach((link) => {
       const href = link.getAttribute('href');
       if (href === `#${currentSectionId}`) {
         link.classList.add('active');

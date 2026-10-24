@@ -382,6 +382,253 @@ html[data-theme="dark"] .moon-icon { display: block; }
 }
 
 /* ==============================================================================
+   MOBILE NAVIGATION BUTTON & DRAWER
+   ============================================================================== */
+
+/* Hamburger Button (Desktop: Hidden) */
+.mobile-menu-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-card-alt);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-main);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.mobile-menu-btn:hover {
+  border-color: var(--accent-pink);
+}
+
+.hamburger-box {
+  width: 18px;
+  height: 14px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hamburger-line {
+  width: 100%;
+  height: 2px;
+  background-color: var(--text-main);
+  border-radius: 2px;
+  transition: transform var(--transition-normal), opacity var(--transition-fast);
+  transform-origin: center;
+}
+
+.mobile-menu-btn.is-active .line-1 {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.mobile-menu-btn.is-active .line-2 {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.mobile-menu-btn.is-active .line-3 {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Mobile Drawer Overlay Container */
+.mobile-nav-drawer {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  z-index: 9999;
+  display: flex;
+  justify-content: flex-end;
+  pointer-events: none;
+  visibility: hidden;
+  transition: visibility var(--transition-normal);
+}
+
+.mobile-nav-drawer.is-open {
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.mobile-drawer-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 9, 13, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.mobile-nav-drawer.is-open .mobile-drawer-backdrop {
+  opacity: 1;
+}
+
+.mobile-drawer-content {
+  position: relative;
+  width: 86%;
+  max-width: 340px;
+  height: 100vh;
+  height: 100dvh;
+  background: var(--bg-page);
+  border-left: 1px solid var(--border-card);
+  box-shadow: -8px 0 32px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  padding: 24px 20px;
+  transform: translateX(100%);
+  transition: transform 0.35s var(--ease-spring);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.mobile-nav-drawer.is-open .mobile-drawer-content {
+  transform: translateX(0);
+}
+
+.mobile-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border-subtle);
+  margin-bottom: 18px;
+}
+
+.drawer-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--text-main);
+}
+
+.mobile-drawer-close-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-card-alt);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.mobile-drawer-close-btn:hover {
+  border-color: var(--accent-pink);
+  color: var(--accent-pink);
+}
+
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.mobile-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.98rem;
+  font-weight: 600;
+  transition: all var(--transition-fast);
+}
+
+.mobile-nav-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--bg-card-alt);
+  color: var(--accent-pink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background var(--transition-fast);
+}
+
+.mobile-nav-item:hover,
+.mobile-nav-item.active {
+  color: var(--text-main);
+  background: var(--bg-card-alt);
+}
+
+.mobile-nav-item.active .mobile-nav-icon {
+  background: var(--accent-pink);
+  color: #ffffff;
+}
+
+.mobile-drawer-footer {
+  padding-top: 20px;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: auto;
+}
+
+.mobile-drawer-cta-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(135deg, var(--accent-pink), #e0175f);
+  color: #ffffff;
+  text-decoration: none;
+  padding: 14px 18px;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 16px var(--accent-pink-glow);
+  transition: transform var(--transition-fast);
+}
+
+.mobile-drawer-cta-btn:hover {
+  transform: translateY(-2px);
+}
+
+.mobile-drawer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.drawer-contact-label {
+  font-size: 0.78rem;
+  color: var(--text-faint);
+  font-weight: 600;
+}
+
+.drawer-contact-email {
+  font-size: 0.85rem;
+  font-family: var(--font-mono);
+  color: var(--accent-pink);
+  text-decoration: none;
+  word-break: break-all;
+}
+
+/* Scroll lock when mobile drawer is open */
+body.mobile-menu-active {
+  overflow: hidden;
+  touch-action: none;
+}
+
+/* ==============================================================================
    HERO SECTION
    ============================================================================== */
 
@@ -1296,10 +1543,15 @@ html[data-theme="dark"] .moon-icon { display: block; }
 }
 
 /* ==============================================================================
-   RESPONSIVE DESIGN
+   RESPONSIVE DESIGN SYSTEM
    ============================================================================== */
 
+/* 1. TABLET & MEDIUM SCREENS (<= 1024px) */
 @media (max-width: 1024px) {
+  :root {
+    --header-height: 74px;
+  }
+
   .hero-grid {
     grid-template-columns: 1fr;
     gap: 48px;
@@ -1317,59 +1569,636 @@ html[data-theme="dark"] .moon-icon { display: block; }
   .onboarding-intro {
     border-right: none;
     border-bottom: 1px solid var(--border-subtle);
-    padding: 40px 32px;
+    padding: 44px 36px;
   }
 
   .onboarding-form-card {
-    padding: 40px 32px;
+    padding: 44px 36px;
   }
 
   .challenge-cards-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .metrics-banner {
     flex-direction: column;
     gap: 28px;
+    padding: 36px 32px;
   }
 
   .banner-divider {
     width: 60px;
     height: 1px;
+    margin: 0 auto;
   }
 }
 
+/* 2. MOBILE LANDSCAPE & PORTRAIT (<= 768px) */
 @media (max-width: 768px) {
-  .nav-links {
-    display: none;
+  :root {
+    --header-height: 68px;
   }
 
-  .hero-heading {
-    font-size: 2.3rem;
+  /* Prevent any mobile horizontal page shifts */
+  html, body {
+    overflow-x: clip;
+    max-width: 100vw;
+  }
+
+  /* Compact ambient glows to save memory and avoid overflow */
+  .ambient-glow {
+    filter: blur(80px);
+  }
+  .glow-1 {
+    width: 320px;
+    height: 320px;
+    top: -80px;
+    right: -60px;
+  }
+  .glow-2 {
+    width: 340px;
+    height: 340px;
+    left: -80px;
+  }
+
+  /* Header & Navigation Bar */
+  .header-container {
+    padding: 0 18px;
+  }
+
+  .nav-links {
+    display: none !important;
+  }
+
+  .header-cta-btn {
+    display: none !important;
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+  }
+
+  .header-actions {
+    gap: 10px;
+  }
+
+  .brand-logo {
+    gap: 10px;
+  }
+
+  .brand-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .brand-name {
+    font-size: 1.2rem;
+  }
+
+  /* Containers & Section Margins */
+  .section-container {
+    padding: 0 18px;
+  }
+
+  .section {
+    padding: 56px 0;
+  }
+
+  .section-header {
+    margin-bottom: 36px;
   }
 
   .section-title {
-    font-size: 2rem;
+    font-size: clamp(1.75rem, 5.5vw, 2.25rem);
+    line-height: 1.2;
+    margin-bottom: 12px;
   }
 
-  .form-grid-2 {
-    grid-template-columns: 1fr;
+  .section-desc {
+    font-size: 0.98rem;
+    line-height: 1.55;
   }
 
-  .header-container {
-    padding: 0 20px;
+  /* Hero Section */
+  .hero-section {
+    padding: 32px 0 52px;
   }
 
-  .section-container {
-    padding: 0 20px;
+  .hero-grid {
+    gap: 36px;
+  }
+
+  .hero-badge {
+    font-size: 0.78rem;
+    padding: 5px 12px;
+    margin-bottom: 16px;
+  }
+
+  .hero-heading {
+    font-size: clamp(2rem, 6.8vw, 2.65rem);
+    line-height: 1.18;
+    letter-spacing: -0.025em;
+    margin-bottom: 16px;
+  }
+
+  .hero-lead {
+    font-size: 1.02rem;
+    line-height: 1.55;
+    margin-bottom: 26px;
   }
 
   .hero-buttons {
     flex-direction: column;
     align-items: stretch;
+    gap: 12px;
+    margin-bottom: 28px;
+    width: 100%;
   }
 
   .primary-btn, .secondary-btn {
+    width: 100%;
     justify-content: center;
+    padding: 14px 20px;
+    font-size: 0.98rem;
+  }
+
+  /* Hero Highlights: Neat structured vertical card stack */
+  .hero-highlights {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-subtle);
+    width: 100%;
+  }
+
+  .highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-main);
+    padding: 10px 14px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-sm);
+  }
+
+  /* Mockup Windows (Hero & POS) */
+  .app-mockup-window {
+    border-radius: var(--radius-md);
+  }
+
+  .window-top-bar {
+    padding: 10px 14px;
+    gap: 8px;
+  }
+
+  .window-controls {
+    gap: 5px;
+  }
+
+  .control-dot {
+    width: 9px;
+    height: 9px;
+  }
+
+  .window-address-bar {
+    padding: 3px 10px;
+    font-size: 0.72rem;
+    max-width: 170px;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    gap: 6px;
+  }
+
+  .window-address-bar span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .window-status-pill {
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    flex-shrink: 0;
+  }
+
+  /* Hero Floating Badge */
+  .hero-float-card.float-bottom {
+    bottom: 12px;
+    right: 12px;
+    padding: 8px 14px;
+    border-radius: var(--radius-sm);
+    gap: 2px;
+  }
+
+  .float-stat {
+    font-size: 1.2rem;
+  }
+
+  .float-stat-sub {
+    font-size: 0.7rem;
+  }
+
+  /* Challenge Cards */
+  .challenge-cards-grid {
+    gap: 16px;
+    margin-bottom: 36px;
+  }
+
+  .challenge-card {
+    padding: 22px 18px;
+    border-radius: var(--radius-md);
+    gap: 16px;
+  }
+
+  .card-pill {
+    gap: 8px;
+  }
+
+  .pill-badge {
+    padding: 2px 8px;
+    font-size: 0.75rem;
+  }
+
+  .pill-text {
+    font-size: 1.05rem;
+  }
+
+  .card-title {
+    font-size: 1.18rem;
+    margin-bottom: 8px;
+  }
+
+  .card-text {
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+
+  .card-metric-footer {
+    padding-top: 14px;
+  }
+
+  .metric-highlight {
+    font-size: 1.5rem;
+  }
+
+  .metric-label {
+    font-size: 0.8rem;
+    max-width: 130px;
+  }
+
+  /* Metrics Growth Banner */
+  .metrics-banner {
+    padding: 26px 20px;
+    border-radius: var(--radius-md);
+    gap: 22px;
+  }
+
+  .banner-number {
+    font-size: 2.5rem;
+    margin-bottom: 4px;
+  }
+
+  .banner-label {
+    font-size: 0.9rem;
+  }
+
+  .banner-divider {
+    width: 44px;
+    height: 1px;
+    background: var(--border-subtle);
+  }
+
+  /* Solutions Section */
+  .feature-checklist {
+    gap: 18px;
+    margin-top: 24px;
+  }
+
+  .checklist-item {
+    gap: 14px;
+  }
+
+  .check-icon {
+    width: 30px;
+    height: 30px;
+    margin-top: 1px;
+    flex-shrink: 0;
+  }
+
+  .check-title {
+    font-size: 1.05rem;
+    margin-bottom: 2px;
+  }
+
+  .check-desc {
+    font-size: 0.9rem;
+  }
+
+  /* Workflow Chips */
+  .workflow-chips-card {
+    margin-top: 16px;
+    padding: 16px 18px;
+    border-radius: var(--radius-md);
+  }
+
+  .chips-title {
+    font-size: 0.84rem;
+    margin-bottom: 10px;
+  }
+
+  .chips-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .chip-item {
+    padding: 8px 10px;
+    font-size: 0.78rem;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* Onboarding Section & Form */
+  .onboarding-section {
+    padding-bottom: 60px;
+  }
+
+  .onboarding-card-wrapper {
+    border-radius: var(--radius-md);
+  }
+
+  .onboarding-intro {
+    padding: 30px 20px;
+  }
+
+  .onboarding-heading {
+    font-size: clamp(1.65rem, 5vw, 2.1rem);
+    line-height: 1.2;
+    margin-bottom: 14px;
+  }
+
+  .onboarding-subtext {
+    font-size: 0.96rem;
+    margin-bottom: 24px;
+  }
+
+  .onboarding-perks {
+    gap: 14px;
+    margin-bottom: 26px;
+  }
+
+  .perk-row {
+    gap: 10px;
+    font-size: 0.92rem;
+  }
+
+  .perk-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .direct-email-box {
+    padding-top: 20px;
+  }
+
+  .box-email {
+    font-size: 0.92rem;
+  }
+
+  .onboarding-form-card {
+    padding: 30px 20px;
+  }
+
+  .form-card-header {
+    margin-bottom: 22px;
+  }
+
+  .form-title {
+    font-size: 1.38rem;
+  }
+
+  .form-subtitle {
+    font-size: 0.88rem;
+  }
+
+  .form-grid-2 {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .form-group label {
+    font-size: 0.84rem;
+  }
+
+  /* CRITICAL: 16px font-size prevents iOS Safari from automatically zooming into inputs on focus */
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 16px !important;
+    min-height: 48px;
+    padding: 12px 14px;
+  }
+
+  .form-group textarea {
+    min-height: 84px;
+  }
+
+  .submit-form-btn {
+    padding: 15px 20px;
+    font-size: 0.95rem;
+    min-height: 48px;
+    width: 100%;
+    margin-top: 4px;
+  }
+
+  .form-footer-disclaimer {
+    font-size: 0.78rem;
+  }
+
+  /* Footer */
+  .page-footer {
+    padding: 44px 0 28px;
+  }
+
+  .footer-container {
+    gap: 28px;
+  }
+
+  .footer-tagline {
+    font-size: 0.9rem;
+  }
+
+  .footer-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px 16px;
+    padding-top: 18px;
+  }
+
+  .footer-links a {
+    padding: 4px 0;
+    font-size: 0.92rem;
+  }
+
+  .footer-bottom {
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+
+  /* Mobile Toast Floating Banner */
+  .toast-container {
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+    gap: 8px;
+  }
+
+  .toast {
+    width: 100%;
+    font-size: 0.86rem;
+    padding: 12px 16px;
   }
 }
+
+/* 3. MOBILE SCREENS (<= 640px) */
+@media (max-width: 640px) {
+  :root {
+    --header-height: 64px;
+  }
+
+  .header-container {
+    padding: 0 14px;
+  }
+
+  .section-container {
+    padding: 0 14px;
+  }
+
+  /* Hide badge pill on small mobile to give logo full breathing room */
+  .brand-pill {
+    display: none;
+  }
+
+  .brand-name {
+    font-size: 1.15rem;
+  }
+
+  /* Compact Theme Toggle on small mobile: hide label, keep sleek toggle */
+  .theme-toggle-btn {
+    padding: 5px 8px;
+    gap: 0;
+  }
+
+  .theme-label {
+    display: none;
+  }
+
+  .hero-heading {
+    font-size: 2.05rem;
+  }
+
+  .hero-lead {
+    font-size: 0.96rem;
+  }
+
+  /* Stack workflow chips vertically on very narrow screens for crystal clear legibility */
+  .chips-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .chip-item {
+    justify-content: flex-start;
+    padding: 8px 12px;
+    font-size: 0.82rem;
+  }
+
+  .hero-float-card.float-bottom {
+    bottom: 8px;
+    right: 8px;
+    padding: 6px 10px;
+  }
+
+  .float-stat {
+    font-size: 1.05rem;
+  }
+
+  .float-stat-sub {
+    font-size: 0.65rem;
+  }
+
+  .window-address-bar {
+    max-width: 135px;
+    font-size: 0.68rem;
+  }
+
+  .submit-form-btn {
+    font-size: 0.88rem;
+    padding: 14px 14px;
+    gap: 8px;
+  }
+
+  .submit-form-btn svg {
+    flex-shrink: 0;
+  }
+}
+
+/* 4. ULTRA-SLIM PHONES (<= 360px) */
+@media (max-width: 360px) {
+  .header-container {
+    padding: 0 10px;
+  }
+
+  .section-container {
+    padding: 0 10px;
+  }
+
+  .brand-logo {
+    gap: 8px;
+  }
+
+  .brand-name {
+    font-size: 1.05rem;
+  }
+
+  .brand-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .hero-heading {
+    font-size: 1.85rem;
+  }
+
+  .challenge-card {
+    padding: 18px 14px;
+  }
+
+  .onboarding-intro,
+  .onboarding-form-card {
+    padding: 24px 14px;
+  }
+
+  .window-address-bar {
+    max-width: 110px;
+  }
+
+  .metric-highlight {
+    font-size: 1.35rem;
+  }
+
+  .banner-number {
+    font-size: 2.1rem;
+  }
+}
+
